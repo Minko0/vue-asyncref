@@ -1,10 +1,27 @@
 {
   "name": "vue-asyncref",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "private": false,
+  "description": "A customRef to handle async calls simpler",
+  "version": "0.1.1",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "/dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +29,11 @@
   "devDependencies": {
     "typescript": "^5.7.2",
     "vite": "^6.0.3",
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^2.1.8",
     "vue": "^3.5.13"
+  },
+  "dependencies": {
+    "vue-asyncref": "^0.1.0"
   }
 }
